@@ -41,3 +41,15 @@ class OtpCodeRegister(models.Model):
         return f'{self.phone} - {self.code} - {self.created}'
 
 
+class UserComment(models.Model):
+    user_name = models.CharField(max_length=250)
+    email = models.EmailField()
+    comment = models.TextField()
+    subject = models.CharField(max_length=250)
+    status = models.BooleanField(default=False)
+    created = models.DateField(auto_now_add=True)
+    is_delete = models.BooleanField(default=False)
+
+    def __str__(self) -> str:
+        return f'{self.user_name}-{self.subject}-{self.status}-{self.created}'
+    
