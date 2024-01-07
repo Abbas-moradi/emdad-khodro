@@ -53,3 +53,14 @@ class UserComment(models.Model):
     def __str__(self) -> str:
         return f'{self.user_name}-{self.subject}-{self.status}-{self.created}'
     
+
+class ContactUs(models.Model):
+    email = models.EmailField()
+    name = models.CharField(max_length=250)
+    subject = models.CharField(max_length=250)
+    description = models.TextField()
+    created = models.DateField(auto_now_add=True)
+    status = models.BooleanField(default=True)
+
+    def __str__(self) -> str:
+        return f'{self.name} - {self.subject} - {self.email}'
