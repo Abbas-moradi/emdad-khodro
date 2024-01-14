@@ -1,5 +1,8 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="fa" dir="ltr">
+
+{% include 'inc/head.html' %}
 
 <body>
     <!-- Preloader Starts -->
@@ -7,14 +10,23 @@
         <div class="spinner"></div>
     </div>
     <!-- Preloader End -->
+
     {% include 'inc/navbar.html' %}
+    
+    {% include 'inc/baner.html' %}
+    {% include 'inc/search.html' %}
+    {% include 'inc/category.html' %}
+    {% include 'inc/job.html' %}
+    
+    {% include 'inc/footer.html' %}
+
     <!-- Javascript -->
-    <script src='{% static "assets/js/vendor/jquery-2.2.4.min.js" %}'></script>
-	<script src='{% static "assets/js/vendor/bootstrap-4.1.3.min.js" %}'></script>
-    <script src='{% static "assets/js/vendor/wow.min.js" %}'></script>
-    <script src='{% static "assets/js/vendor/owl-carousel.min.js" %}'></script>
-    <script src='{% static "assets/js/vendor/jquery.nice-select.min.js" %}'></script>
-    <script src='{% static "assets/js/vendor/ion.rangeSlider.js" %}'></script>
-    <script src='{% static "assets/js/main.js" %}'></script>
+	<script src="{% static 'home/assets/js/vendor/bootstrap-4.1.3.min.js' %}"></script>
+    <script src="{% static 'home/assets/js/vendor/jquery-2.2.4.min.js' %}"></script>
+    <script src="{% static 'home/assets/js/vendor/wow.min.js' %}"></script>
+    <script src="{% static 'home/assets/js/vendor/owl-carousel.min.js' %}"></script>
+    <script src="{% static 'home/assets/js/vendor/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'home/assets/js/vendor/ion.rangeSlider.js' %}"></script>
+    <script src="{% static 'home/assets/js/main.js' %}"></script>
 </body>
 </html>

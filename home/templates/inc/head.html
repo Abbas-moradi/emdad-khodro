@@ -1,3 +1,4 @@
+{% load static %}
 <head>
     <!-- Required Meta Tags -->
     <meta charset="UTF-8">
@@ -8,16 +9,16 @@
     <title>Comport</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/images/logo/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static 'home/assets/images/logo/favicon.png' %}" type="image/x-icon">
 
     <!-- CSS Files -->
-    <link rel="stylesheet" href="assets/css/animate-3.7.0.css">
-    <link rel="stylesheet" href="assets/css/font-awesome-4.7.0.min.css">
-    <link rel="stylesheet" href="assets/fonts/flat-icon/flaticon.css">
-    <link rel="stylesheet" href="assets/css/bootstrap-4.1.3.min.css">
-    <link rel="stylesheet" href="assets/css/owl-carousel.min.css">
-    <link rel="stylesheet" href="assets/css/nice-select.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href='{% static "home/assets/css/animate-3.7.0.css" %}'>
+    <link rel="stylesheet" href='{% static "home/assets/css/font-awesome-4.7.0.min.css" %}'>
+    <link rel="stylesheet" href='{% static "home/assets/fonts/flat-icon/flaticon.css" %}'>
+    <link rel="stylesheet" href='{% static "home/assets/css/bootstrap-4.1.3.min.css" %}'>
+    <link rel="stylesheet" href='{% static "home/assets/css/owl-carousel.min.css" %}'>
+    <link rel="stylesheet" href='{% static "home/assets/css/nice-select.css" %}'>
+    <link rel="stylesheet" href='{% static "home/assets/css/style.css" %}'>
     <style>
         .main-menu{
             font-family:"IRHoma"

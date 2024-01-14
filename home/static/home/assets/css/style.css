@@ -5,6 +5,18 @@ body{
     font-family:"Mj_Casablanca";
     font-weight:400
 }
+.container{
+    font-family:"Mj_Casablanca";
+}
+.section-padding3{
+    font-family:"Mj_Casablanca";
+}
+.text-font{
+    font-family:"Mj_Casablanca";
+}
+.category{
+    font-family:"Mj_Casablanca";
+}
 
 .py-3{
      font-family:"Mj_Casablanca";
@@ -460,7 +472,8 @@ input:focus,textarea:focus{
 }
 .search-bg form .template-btn {
     border: none;
-    background: #111;
+    color: #fdfafa !important;
+    background: #040404;
     cursor: pointer;
 }
 .search-bg form .template-btn:hover {
@@ -817,7 +830,7 @@ body {
 }
 
 .newsletter-area .template-btn {
-    margin-left: 10px;
+    margin-left: 15px;
 }
 
 @media (max-width: 575.98px) {
@@ -1142,17 +1155,19 @@ body {
 
 /* Header Area Single Page Styles */
 .header-area.single-page {
-    background-color: #b0b0b0;
-    background-image: url("../images/page-header-bg.jpg");
+    background-color: #ffddc6;
+    background-image: url("..home/assets/images/page-header-bg.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     position: relative;
+    font-family:"Mj_Casablanca";
     z-index: 1;
 }
 
 .header-area.single-page:after {
     content: '';
+    font-family:"Mj_Casablanca";
     position: absolute;
     top: 0;
     left: 0;
@@ -1163,12 +1178,14 @@ body {
 }
 
 .header-area.single-page .page-title {
+    font-family:"Mj_Casablanca";
     padding: 140px 0 200px;
 }
 
 .header-area.single-page .page-title h2,
 .header-area.single-page .page-title p {
-    color: #fff;
+    color: #ffaaaa;
+    font-family:"Mj_Casablanca";
 }
 
 /* Team Image Styles */
