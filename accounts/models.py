@@ -9,9 +9,35 @@ class User(AbstractBaseUser):
     email = models.EmailField(max_length=150, unique=True)
     phone = models.CharField(max_length=12, unique=True)
     full_name = models.CharField(max_length=150)
+
+    class Jobs(models.TextChoices):
+        MECHANICAL_REPAIR = "MR",
+        ELECTRICAL_REPAIR = "ER",
+        BODY_WORK = "BW",
+        PAINTING = "PT",
+        TRANSMISSION_REPAIR = "TR",
+        OIL_CHANGE = "OC",
+        TOWING = "TW",
+        OTHER = "OT",
+
+    job_type = models.CharField(
+        max_length=2,
+        choices=Jobs.choices,
+        default=Jobs.OTHER,
+    )
+
+    class City(models.TextChoices):
+        ABYEK = "AB",
+
+    city = models.CharField(
+        max_length=2,
+        choices=City.choices,
+        default=City.ABYEK
+    )
     is_active = models.BooleanField(default=True)
     is_delete = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False)
+    profile_picture = models.ImageField(upload_to='profile_pics/')
 
     objects = UserManager()
 
