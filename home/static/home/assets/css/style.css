@@ -11,10 +11,26 @@ body{
     font-family:"Mj_Casablanca";
     font-weight:400
 }
+.navbar-text-black{
+    background-color: orange;
+    border-radius: 10px;
+}
 .black-text{
     color:#006a50;
     font-family:"Mj_Casablanca";
     font-weight:400
+}
+.phone-number {
+    text-align: center;
+    font-size: 60px; 
+}
+.banner-text {
+    text-align: center;
+    font-size: 64px;
+    margin-left: 0px; 
+}
+.orange{
+    color: orange;
 }
 .advertisement-area {
     background-image: url('{% static "home/assets/images/newsletter-bg.jpg" %}'); 
@@ -1388,6 +1404,7 @@ body {
 .single-box2 {
     padding: 70px 50px;
     background: #ff9902;
+    border-radius: 10px;
 }
 
 .single-box1 h3,
