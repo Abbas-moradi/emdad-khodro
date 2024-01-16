@@ -1,7 +1,28 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600");
+.navbar {
+    background-color: #787878; 
+}
+.navbar-nav .nav-link:hover {
+    color: #ff4500; 
+}
 body{
     color:#777;
+    font-family:"Mj_Casablanca";
+    font-weight:400
+}
+.black-text{
+    color:#006a50;
+    font-family:"Mj_Casablanca";
+    font-weight:400
+}
+.advertisement-area {
+    background-image: url('{% static "home/assets/images/newsletter-bg.jpg" %}'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.black-text2{
+    color:#000000;
     font-family:"Mj_Casablanca";
     font-weight:400
 }
@@ -12,6 +33,16 @@ body{
     font-family:"Mj_Casablanca";
 }
 .text-font{
+    font-family:"Mj_Casablanca";
+}
+.srcbtn{
+    font-family:"Mj_Casablanca";
+}
+.navbar{
+    font-family:"Mj_Casablanca";
+}
+.advertisement{
+    color:#f6f2f2;
     font-family:"Mj_Casablanca";
 }
 .category{
@@ -285,6 +316,7 @@ input:focus,textarea:focus{
     }
     .search-bg {
         margin-top: 100px;
+        
     }
 }
 
@@ -438,6 +470,7 @@ input:focus,textarea:focus{
 .search-bg form {
     background: #ff9902;
     padding: 40px;
+    border-radius: 10px;
 }
 .search-bg form input {
     width: 280px;
@@ -552,10 +585,16 @@ body {
 
 .single-category {
     padding: 30px 16px;
-    background: #f9f9f9;
+    background: orange;
     border: 1px solid #eee;
     transition: .3s;
+    border-radius: 10px; 
 }
+
+.btn-warning{
+    background-color: orange;
+}
+
 
 .single-category:hover {
     background: #fff;

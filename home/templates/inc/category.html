@@ -10,17 +10,24 @@
                 </div>
             </div>
         </div>
+        
         <div class="row category">
-            <div class="col-lg-3 col-md-6">
-                <div class="text-center mb-4 single-category">
-                    <img src="{% static 'home/assets/images/cat1.png' %}" alt="category">
-                    <h4 class="category">رضا شیخ آقاجانی</h4>
-                    <h5 class="category">تخصص : کافی نت</h5>
-                    <h5 class="category">تلفن : 09304844265</h5>
-                    <h5 class="category">آدرس : آبیک پاساژ طالقانی</h5>
+            {% for user in users %}
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="text-center single-category">
+                        <div class="rounded-circle overflow-hidden mx-auto" style="width: 100px; height: 100px;">
+                            <img src="{{ user.profile_picture.url }}" alt="category" class="w-100 h-100 rounded-circle img-thumbnail">
+                        </div>
+                        <br>
+                        <h4 class="category">متخصص : {{ user.full_name }}</h4>
+                        <h5 class="black-text2">تخصص : {{ user.job_type }}</h5>
+                        <h5 class="black-text2">تلفن : {{ user.phone }}</h5>
+                        <h5 class="black-text2">آدرس : {{ user.city }}</h5>
+                        <h5 class="black-text2">توضیحات : {{ user.description }}</h5>
+                    </div>
                 </div>
-            </div>
-        </div>
+            {% endfor %}
+        </div>        
     </div>
 </section>
 <!-- Category Area End -->

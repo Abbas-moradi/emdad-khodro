@@ -11,29 +11,35 @@ class User(AbstractBaseUser):
     full_name = models.CharField(max_length=150)
 
     class Jobs(models.TextChoices):
-        MECHANICAL_REPAIR = "MR",
-        ELECTRICAL_REPAIR = "ER",
-        BODY_WORK = "BW",
-        PAINTING = "PT",
-        TRANSMISSION_REPAIR = "TR",
-        OIL_CHANGE = "OC",
-        TOWING = "TW",
-        OTHER = "OT",
+        MECHANICAL_REPAIR = "تعمیرکار",
+        PUNCTURE_CATCHER = "آپاراتی",
+        CAR_GLASS = "شیشه اتوموبیل",
+        ELECTRICAL_REPAIR = "برق خودرو",
+        BODY_WORK = "صافکار",
+        PAINTING = "نقاش",
+        TRANSMISSION_REPAIR = "متخصص گیربکس",
+        OIL_CHANGE = "تعویض روغن",
+        TOWING = "یدک کش",
+        OTHER = "سایر",
+    
+        def call(self):
+            return f'{self.MECHANICAL_REPAIR}'
 
     job_type = models.CharField(
-        max_length=2,
+        max_length=20,
         choices=Jobs.choices,
         default=Jobs.OTHER,
     )
 
     class City(models.TextChoices):
-        ABYEK = "AB",
+        ABYEK = "آبیک",
 
     city = models.CharField(
-        max_length=2,
+        max_length=20,
         choices=City.choices,
         default=City.ABYEK
     )
+    description = models.TextField(null=True, blank=True)
     is_active = models.BooleanField(default=True)
     is_delete = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False)
