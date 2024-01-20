@@ -150,6 +150,26 @@
       font-family:"Mj_Casablanca";
       border-radius: 7px;
     }
+
+    input[type=button] {
+      background: #f5961a;
+      height: 35px;
+      line-height: 35px;
+      width: 100%;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      color: #fff;
+      font-size: 1.1em;
+      margin-bottom: 10px;
+      font-family:"Mj_Casablanca";
+      border-radius: 5px;
+    }
+    input[type=button]:hover {
+      background: #d17f13;
+      font-family:"Mj_Casablanca";
+      border-radius: 7px;
+    }
   </style>
 </head>
 
@@ -215,6 +235,7 @@
         </div>
         <input class="button" type="submit" value="ارسال کد تایید  ">
         <h6 class="detail">یک کد تایید ثبت نام به ایمیل ارائه شده ارسال میشود</h6>
+        <a class="btn btn-warning" type="" href="{% url 'home:home' %}">صفحه اصلی</a>
     </form>
   </div>
 </body>
