@@ -40,10 +40,10 @@ class User(AbstractBaseUser):
         default=City.ABYEK
     )
     description = models.TextField(null=True, blank=True)
+    profile_picture = models.ImageField(upload_to='profile_pics/')
     is_active = models.BooleanField(default=True)
     is_delete = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False)
-    profile_picture = models.ImageField(upload_to='profile_pics/')
 
     objects = UserManager()
 
