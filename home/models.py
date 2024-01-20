@@ -17,3 +17,22 @@ class Advertisement(models.Model):
     
     def __str__(self) -> str:
         return f'{self.user.full_name} - {self.description}'
+
+
+class Job(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    title = models.CharField(max_length=50)
+    description = models.TextField()
+    image = models.ImageField(upload_to='job_pic/')
+    phone = models.CharField(max_length=13)
+    address = models.TextField()
+    created = models.DateField(auto_now_add=True)
+    status = models.BooleanField(default=False)
+
+    class Meta:
+        verbose_name = 'Job'
+        verbose_name_plural = 'Jobs'
+        ordering = ('created', )
+
+    def __str__(self) -> str:
+        return f'{self.user.full_name} - {self.title} - {self.created}'
