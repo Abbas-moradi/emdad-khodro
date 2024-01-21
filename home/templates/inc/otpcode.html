@@ -175,68 +175,15 @@
 
 <body>
   <div class="register-container">
-    <h2>فرم ثبت نام</h2>
+    <h2>فرم اعتبار سنجی </h2>
     <form action="#" method="post">
         {% csrf_token %}
+        <h6 class="detail">کد ارسال شده به ایمیل خود را در قسمت زیر وارد کنید</h6>
         <div class="input-field">
             <i class="fa fa-user"></i>
-            <input type="text" name="name" placeholder="نام کامل" required/>
+            <input type="text" name="code" placeholder="کد ارسال شده" required/>
         </div>
-        <div class="input-field">
-            <i class="fa fa-phone"></i>
-            <input type="text" name="name" placeholder="تلفن" required/>
-        </div>
-        <div class="input-field">
-            <i class="fa-sharp fa-solid fa-envelope"></i>
-            <input type="email" name="email" placeholder="ایمیل" required />
-        </div>
-        <div class="input-field">
-            <i class="fa fa-image"></i>
-            <input type="file" name="image" accept="image/*" required/>
-        </div>
-        <div class="input-field">
-            <i class="fa fa-file-text"></i>
-            <input type="text" name="description" placeholder="توضیحات شعل خود را وارد کنید"/>
-        </div>
-        <div class="input-field">
-            <i class="fa fa-lock"></i>
-            <input type="password" name="password1" placeholder="رمز" required />
-        </div>
-        <div class="input-field">
-            <i class="fa fa-lock"></i>
-            <input type="password" name="password2" placeholder="تکرار رمز" required />
-        </div>
-
-        <div class="input-field">
-            <input type="radio" name="gender" id="male">
-            <label for="male">آقا</label>
-            <input type="radio" name="gender" id="female">
-            <label for="female">خانم</label>
-        </div>
-        <div class="input-field select-option">
-            <select required>
-                <option>انتخاب شهر </option>
-                <option>آبیک</option>
-            </select>
-            <div class="select-arrow"></div>
-        </div>
-        <div class="input-field select-option">
-            <select required>
-                <option>رسته شغلی</option>
-                <option>یدک کش</option>
-                <option>مکانیک</option>
-                <option>برق خودرو</option>
-                <option>صافکار</option>
-                <option>نقاش</option>
-                <option>شیشه خودرو</option>
-                <option>تعویض روغن</option>
-                <option>لوازم یدکی</option>
-                <option>فروش لاستیک</option>
-            </select>
-            <div class="select-arrow"></div>
-        </div>
-        <input class="button" type="submit" value="ارسال کد تایید  ">
-        <h6 class="detail">یک کد تایید ثبت نام به ایمیل ارائه شده ارسال میشود</h6>
+        <input class="button" type="submit" value="اعتبار سنجی">
         <a class="btn btn-warning" type="" href="{% url 'home:home' %}">صفحه اصلی</a>
     </form>
   </div>
