@@ -65,7 +65,7 @@ class User(AbstractBaseUser):
 
 
 class OtpCodeRegister(models.Model):
-    phone = models.CharField(max_length=12)
+    email = models.EmailField()
     code = models.PositiveSmallIntegerField()
     created = models.DateField(auto_now=True)
 

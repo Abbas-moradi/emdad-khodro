@@ -7,7 +7,7 @@ from .models import User, OtpCodeRegister, UserComment, ContactUs
 
 @admin.register(OtpCodeRegister)
 class OtpCodeAdmin(admin.ModelAdmin):
-    list_display = ('phone', 'code', 'created')
+    list_display = ('email', 'code', 'created')
 
 
 class UserAdmin(BaseUserAdmin):

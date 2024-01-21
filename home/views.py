@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views import View
-from accounts.models import User
+from accounts.models import User, OtpCodeRegister
 from home.models import Job, Advertisement
 import random
 
@@ -20,12 +20,13 @@ class Home(View):
     
 
 class Register(View):
-    template_name = 'inc/otpcode.html'
+    reg_template = 'inc/errore.html'
+    otp_code_temp = 'inc/otpcode.html'
 
     def get(self, request):
-        return render(request, self.template_name)
+        return render(request, self.reg_template)
 
-    def post(self):
+    def post(self, request):
         pass
 
 
