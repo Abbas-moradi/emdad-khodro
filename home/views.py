@@ -20,13 +20,13 @@ class Home(View):
     
 
 class Register(View):
-    reg_template = 'inc/errore.html'
+    reg_temp = 'inc/register.html'
     otp_code_temp = 'inc/otpcode.html'
+    errore_temp = 'inc/errore.html'
 
     def get(self, request):
-        return render(request, self.reg_template)
+        return render(request, self.reg_temp)
 
     def post(self, request):
-        pass
-
+        print(request)
 

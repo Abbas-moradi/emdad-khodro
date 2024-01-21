@@ -1,11 +1,16 @@
 import os
-from dotenv import load_dotenv
 import yagmail
 
 
-
 dotenv_path = ".env"
-load_dotenv(dotenv_path)
+try:
+    with open(dotenv_path, 'r') as file:
+        for line in file:
+            key, value = line.strip().split('=')
+            os.environ[key] = value
+except FileNotFoundError:
+    print(f"File {dotenv_path} not found.")
+
 yag = yagmail.SMTP(os.getenv("EMAIL"), os.getenv("PASSWORD"))
 
 
