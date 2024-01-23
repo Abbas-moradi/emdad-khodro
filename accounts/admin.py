@@ -6,7 +6,7 @@ from .models import User, OtpCodeRegister, UserComment, ContactUs
 
 
 @admin.register(OtpCodeRegister)
-class OtpCodeAdmin(admin.ModelAdmin):
+class OtpCodeRegisterAdmin(admin.ModelAdmin):
     list_display = ('email', 'code', 'created')
 
 

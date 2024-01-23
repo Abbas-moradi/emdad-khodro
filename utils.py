@@ -1,5 +1,6 @@
 import os
 import yagmail
+from emkho import settings
 
 
 dotenv_path = ".env"
@@ -11,14 +12,14 @@ try:
 except FileNotFoundError:
     print(f"File {dotenv_path} not found.")
 
-yag = yagmail.SMTP(os.getenv("EMAIL"), os.getenv("PASSWORD"))
 
-
-def send_mail(subject, body, to):
+def send_mail(subject, body, to)-> bool:
+    email_from = settings.EMAIL_HOST_USER
+    print(email_from)
+    message=body
+    subject=subject
     try:
-        yag.send(to=to, subject=subject, contents=body)
-        yag.close()
+        send_mail(subject,message,email_from,[to],fail_silently=False,)
         return True
     except:
         return False
-

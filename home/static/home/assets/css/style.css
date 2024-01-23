@@ -603,7 +603,7 @@ body {
 
 .single-category {
     padding: 30px 16px;
-    background: orange;
+    background: rgb(213, 205, 216);
     border: 1px solid #eee;
     transition: .3s;
     border-radius: 10px; 

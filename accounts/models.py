@@ -67,10 +67,10 @@ class User(AbstractBaseUser):
 class OtpCodeRegister(models.Model):
     email = models.EmailField()
     code = models.PositiveSmallIntegerField()
-    created = models.DateField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self) -> str:
-        return f'{self.phone} - {self.code} - {self.created}'
+        return f'{self.email} - {self.code} - {self.created}'
 
 
 class UserComment(models.Model):
