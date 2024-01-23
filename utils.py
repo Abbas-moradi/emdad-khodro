@@ -1,6 +1,8 @@
 import os
-import yagmail
 from emkho import settings
+from django.core.mail import send_mail, BadHeaderError
+from emkho import settings
+from smtplib import SMTPException
 
 
 dotenv_path = ".env"
@@ -13,13 +15,16 @@ except FileNotFoundError:
     print(f"File {dotenv_path} not found.")
 
 
-def send_mail(subject, body, to)-> bool:
+def send_email(subject, body, to) -> bool:
     email_from = settings.EMAIL_HOST_USER
-    print(email_from)
-    message=body
-    subject=subject
+    message = body
+    subject = subject
     try:
-        send_mail(subject,message,email_from,[to],fail_silently=False,)
+        send_mail(subject, message, email_from, [to], fail_silently=False)
         return True
-    except:
+    except BadHeaderError as bad_header_error:
+        print(f"خطا در ساختار هدر: {bad_header_error}")
+        return False
+    except SMTPException as smtp_exception:
+        print(f"خطا در ارسال ایمیل: {smtp_exception}")
         return False

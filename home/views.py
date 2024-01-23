@@ -3,9 +3,8 @@ from django.views import View
 from accounts.models import User, OtpCodeRegister
 from home.models import Job, Advertisement
 import random
-from utils import send_mail, check_time_elapsed
+from utils import send_email
 from django.utils import timezone
-from datetime import datetime
 
 
 class Home(View):
@@ -58,7 +57,7 @@ class Register(View):
         else:
             OtpCodeRegister.objects.create(email=user_enter_mail, code=otp_code)
         
-        if send_mail(subject, body, user_enter_mail):
+        if send_email(subject, body, user_enter_mail):
             request.session['user_register_info'] = {
                     'phone_number': request.POST['phone'],
                     'user_email': request.POST['email'],
@@ -82,4 +81,20 @@ class VerifyCode(View):
         return render(request, self.otp_code_temp)
 
     def post(self, request):
-        return render(request, self.errore_temp, {'this_errore': 'این یک پیغام خطای تستی است'})
+        code = request.POST['code']
+        user_email = request.session['user_register_info']['user_email']
+        database_code = OtpCodeRegister.objects.filter(email=user_email).values_list('code', flat=True).first()
+        if int(code)==int(database_code):
+            User.objects.create(
+                email=user_email,
+                phone=request.session['user_register_info']['phone_number'],
+                full_name=request.session['user_register_info']['full_name'],
+                profile_picture=request.session['user_register_info']['pic'],
+                description=request.session['user_register_info']['description'],
+                password=request.session['user_register_info']['password'],
+                city=request.session['user_register_info']['city'],
+                job_type=request.session['user_register_info']['job']
+            )
+            return render(request, self.accept_register_temp)
+        else:
+            return render(request, self.errore_temp, {'this_errore': 'کد وارد شده با کد ارسالی برای شما مغایرت دارد'})
