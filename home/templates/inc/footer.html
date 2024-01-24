@@ -18,9 +18,10 @@
                         <div class="single-widget-home mb-5 mb-lg-0">
                             <h3 class="mb-4">خبرنامه</h3>
                             <p class="mb-4"> به ما اعتماد کنید. ما برای شما پیشنهادهای ویژه و مفید را ارسال می کنیم</p>  
-                            <form action="#">
-                                <input type="email" placeholder="ایمیل خود را وارد کنید" onfocus="this.placeholder = ''" onblur="this.placeholder = 'ایمیل خود را وارد کنید'" required>
-                                <button type="button" class="btn btn-light">ثبت ایمیل</button>
+                            <form action="{% url 'home:newsletter' %}" method="post">
+                                {% csrf_token %}
+                                <input name="email" type="email" placeholder="ایمیل خود را وارد کنید" onfocus="this.placeholder = ''" onblur="this.placeholder = 'ایمیل خود را وارد کنید'" required>
+                                <button type="submit" class="btn btn-light">ثبت ایمیل</button>
                             </form>
                         </div>
                     </div>

@@ -12,9 +12,10 @@
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <form action="#">
-                    <input type="email" placeholder="جای ایمیل شما اینجاست" onfocus="this.placeholder = ''" onblur="this.placeholder = 'جای ایمیل شما اینجاست'" required>
-                    <button type="button" class="btn btn-light">اکنون مشترک شوید</button>
+                <form action="{% url 'home:newsletter' %}" method="post">
+                    {% csrf_token %}
+                    <input name="email" type="email" placeholder="جای ایمیل شما اینجاست" onfocus="this.placeholder = ''" onblur="this.placeholder = 'جای ایمیل شما اینجاست'" required>
+                    <button type="submit" class="btn btn-light">اکنون مشترک شوید</button>
                 </form>
             </div>
         </div>

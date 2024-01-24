@@ -8,4 +8,5 @@ urlpatterns = [
     path('register/', views.Register.as_view(), name='register'),
     path('verifycode/', views.VerifyCode.as_view(), name='verifycode'),
     path('gallery/', views.GalleryImage.as_view(), name='gallery'),
+    path('newsletter/', views.UserEmailReg.as_view(), name='newsletter'),
 ]
