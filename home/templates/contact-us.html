@@ -8,26 +8,8 @@
         <div class="spinner"></div>
     </div>
     <!-- Preloader End -->
-
-    <!-- Map Area Starts -->
-    <section class="map-area section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div id="mapBox" class="mapBox" 
-                        data-lat="40.701083" 
-                        data-lon="-74.1522848" 
-                        data-zoom="13" 
-                        data-info="PO Box CT16122 Collins Street West, Victoria 8007, Australia."
-                        data-mlat="40.701083"
-                        data-mlon="-74.1522848">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Map Area End -->
-
+    <br><br>
+    {% include 'inc/advertisement.html' %}
 
     <!-- Contact Form Starts -->
     <section class="contact-form section-padding3">
@@ -75,7 +57,7 @@
                         <button type="submit" class="template-btn">ارتباط با ما </button>
                     </form>
                 </div>
-                <a type="button" class="template-btn" href="{% url 'home:home' %}"> صفحه اصلی </a>
+                <a href="{% url 'home:home' %}" class="btn btn-dark rounded-pill px-3 d-none d-lg-block">  برگشت به صفحه اصلی  </a>
             </div>
         </div>
     </section>

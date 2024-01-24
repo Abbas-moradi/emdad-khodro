@@ -46,7 +46,7 @@ class Gallery(models.Model):
 
     class Meta:
         verbose_name = 'gallery'
-        verbose_name_plural = 'gallerise'
+        verbose_name_plural = 'galleries'
         ordering = ('created', )
 
     def __str__(self) -> str:
@@ -61,7 +61,7 @@ class Article(models.Model):
 
     class Meta:
         verbose_name='article'
-        verbose_name_plural='aricles'
+        verbose_name_plural='articles'
         ordering=('created',)
     
     def __str__(self) -> str:

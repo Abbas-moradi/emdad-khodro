@@ -136,7 +136,9 @@ class ContactUs(View):
     cont_temp = 'contact-us.html'
 
     def get(self, request):
-        return render(request, self.cont_temp)
+        advertis = Advertisement.objects.filter(status=True, expiration=False)
+        random_advertis = random.choice(advertis)
+        return render(request, self.cont_temp, {'advertis': random_advertis})
     
 
 class About(View):
