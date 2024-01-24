@@ -96,3 +96,17 @@ class ContactUs(models.Model):
 
     def __str__(self) -> str:
         return f'{self.name} - {self.subject} - {self.email}'
+    
+
+class Newsletters(models.Model):
+    email = models.EmailField()
+    created = models.DateTimeField(auto_now_add=True)
+    status = models.BooleanField(default=True)
+
+    class Meta:
+        verbose_name = 'newslletter'
+        verbose_name_plural = 'newslletters'
+        ordering = ['created',]
+
+    def __str__(self) -> str:
+        return str('email')
