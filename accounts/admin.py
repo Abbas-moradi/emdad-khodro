@@ -2,12 +2,17 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from .forms import UserChangeForm, UserCreationForm
 from django.contrib.auth.models import Group
-from .models import User, OtpCodeRegister, UserComment, ContactUs
+from .models import User, OtpCodeRegister, UserComment, ContactUs, Newsletters
 
 
 @admin.register(OtpCodeRegister)
 class OtpCodeRegisterAdmin(admin.ModelAdmin):
     list_display = ('email', 'code', 'created')
+
+
+@admin.register(Newsletters)
+class NewslettersAdmin(admin.ModelAdmin):
+    list_display = ('email', 'created', 'status')
 
 
 class UserAdmin(BaseUserAdmin):
