@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views import View
-from accounts.models import User, OtpCodeRegister
+from accounts.models import User, OtpCodeRegister, Newsletters
 from home.models import Job, Advertisement, Gallery
 import random
 from utils import send_email
@@ -118,10 +118,15 @@ class GalleryImage(View):
 
 class UserEmailReg(View):
     email_accept_temp = 'inc/email-accept.html'
+    errore_temp = 'inc/errore.html'
 
     def get(self, request):
         pass
 
     def post(self, request):
         user_mail = request.POST['email']
+        if Newsletters.objects.filter(email=user_mail).exists():
+            return render(request, self.errore_temp, {'this_errore':'این ایمیل قبلا ثبت شده است، از توجه شما سپاسگذاریم'})
         
+        Newsletters.objects.create(email=user_mail)
+        return render(request, self.email_accept_temp)
