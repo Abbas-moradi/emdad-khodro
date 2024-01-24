@@ -9,4 +9,5 @@ urlpatterns = [
     path('verifycode/', views.VerifyCode.as_view(), name='verifycode'),
     path('gallery/', views.GalleryImage.as_view(), name='gallery'),
     path('newsletter/', views.UserEmailReg.as_view(), name='newsletter'),
+    path('contactus/', views.ContactUs.as_view(), name='contactus'),
 ]

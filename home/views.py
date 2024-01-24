@@ -130,3 +130,10 @@ class UserEmailReg(View):
         
         Newsletters.objects.create(email=user_mail)
         return render(request, self.email_accept_temp)
+
+
+class ContactUs(View):
+    cont_temp = 'contact-us.html'
+
+    def get(self, request):
+        return render(request, self.cont_temp)
