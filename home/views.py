@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views import View
 from accounts.models import User, OtpCodeRegister
-from home.models import Job, Advertisement
+from home.models import Job, Advertisement, Gallery
 import random
 from utils import send_email
 from django.utils import timezone
@@ -58,6 +58,7 @@ class Register(View):
             OtpCodeRegister.objects.create(email=user_enter_mail, code=otp_code)
         
         if send_email(subject, body, user_enter_mail):
+            print(request.POST,'<---------------------->')
             request.session['user_register_info'] = {
                     'phone_number': request.POST['phone'],
                     'user_email': request.POST['email'],
@@ -98,3 +99,18 @@ class VerifyCode(View):
             return render(request, self.accept_register_temp)
         else:
             return render(request, self.errore_temp, {'this_errore': 'کد وارد شده با کد ارسالی برای شما مغایرت دارد'})
+
+
+class GalleryImage(View):
+    gallery_temp = 'inc/gallery.html'
+
+    def get(self, request):
+        images = Gallery.objects.filter(status=True)
+        advertis = Advertisement.objects.filter(status=True, expiration=False)
+        random_advertis = random.choice(advertis)
+        return render(request, self.gallery_temp, {'images': images,
+                                                   'advertis': random_advertis
+                                                   })
+
+    def post(self, request):
+        pass

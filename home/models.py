@@ -36,3 +36,18 @@ class Job(models.Model):
 
     def __str__(self) -> str:
         return f'{self.user.full_name} - {self.title} - {self.created}'
+    
+
+class Gallery(models.Model):
+    name = models.CharField(max_length=50)
+    image = models.ImageField(upload_to='gallery/')
+    created = models.DateTimeField(auto_now_add=True)
+    status = models.BooleanField(default=True)
+
+    class Meta:
+        verbose_name = 'gallery'
+        verbose_name_plural = 'gallerise'
+        ordering = ('created', )
+
+    def __str__(self) -> str:
+        return f'{self.name} - {self.created} - {self.status}'

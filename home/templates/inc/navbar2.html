@@ -2,7 +2,7 @@
         <!-- Navbar Start -->
         <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0">
             <a href="#" class="navbar-brand">
-                <h1 class="m-0 navbar-text-black"> امداد خودرو  </h1>
+                <h1 class="m-0 navbar-text-black"> امداد خودرو آبیک  </h1>
             </a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -13,7 +13,7 @@
                     <a href="#" class="nav-item nav-link">درباره ما</a>
                     <a href="" class="nav-item nav-link">تعمیرکاران</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" >صفحه ها</a>
+                        
                         <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0" dir="rtl">
                             <a href="#" class="dropdown-item" dir="rtl">عضویت</a>
 
@@ -24,7 +24,7 @@
                             {% endfor %}
                         </div>
                     </div>
-                    <a href="#" class="nav-item nav-link">گالری</a>
+                    <a href="{% url 'home:gallery' %}" class="nav-item nav-link">گالری</a>
                     <a href="#" class="nav-item nav-link">ارتباط با ما</a>
                 </div>
                 <a href="{% url 'home:register' %}" class="btn btn-warning rounded-pill px-3 d-none d-lg-block"> عضویت در سایت </a>
