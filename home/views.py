@@ -114,3 +114,14 @@ class GalleryImage(View):
 
     def post(self, request):
         pass
+
+
+class UserEmailReg(View):
+    email_accept_temp = 'inc/email-accept.html'
+
+    def get(self, request):
+        pass
+
+    def post(self, request):
+        user_mail = request.POST['email']
+        

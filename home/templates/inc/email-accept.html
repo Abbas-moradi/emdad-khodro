@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title> ثبت نام</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      background: #f5f5f5;
+      font-family:"Mj_Casablanca";
+    }
+
+    .register-container {
+      background: #fff;
+      width: 400px;
+      max-width: 100%;
+      box-sizing: border-box;
+      padding: 25px;
+      margin: 20px auto;
+      position: relative;
+      z-index: 1;
+      border-top: 5px solid #f5a81a;
+      box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+      font-family:"Mj_Casablanca";
+    }
+
+    h2 {
+      font-size: 1.5em;
+      line-height: 1.5em;
+      margin: 0;
+      text-align: center;
+      padding-bottom: 15px;
+      font-family:"Mj_Casablanca";
+    }
+    
+    .detail {
+      font-size: 1em;
+      line-height: 1.5em;
+      margin: 0;
+      text-align: center;
+      padding-bottom: 15px;
+      font-family:"Mj_Casablanca";
+    }
+  </style>
+</head>
+<body>
+  <div class="register-container text-center">
+    <form action="#">
+        <h5 class="detail">ثبت ایمیل شما با موفقیت انجام شد.<br>
+            اطلاعات و اخبار روز سایت بوسیله خبرنامه ی سایت برای شماارسال خواهد شد<br><br>
+            <img src="{% static 'home/assets/images/email-accept.png' %}" alt="errore pic" width="300px">  
+        </h5>
+        <div class="center">
+            <a class="btn btn-warning" type="button" href="{% url 'home:home' %}">صفحه اصلی</a>
+        </div>
+    </form>
+  </div>
+</body>
+</html>
