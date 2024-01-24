@@ -72,9 +72,10 @@
                         <div class="right">
                             <textarea name="پیام" cols="20" rows="7"  placeholder="پیام خود را وارد کنید " onfocus="this.placeholder = ''" onblur="this.placeholder = 'پیام خود را وارد کنید '" required></textarea>
                         </div>
-                        <button type="submit" class="template-btn">ارتباط با ما</button>
+                        <button type="submit" class="template-btn">ارتباط با ما </button>
                     </form>
                 </div>
+                <a type="button" class="template-btn" href="{% url 'home:home' %}"> صفحه اصلی </a>
             </div>
         </div>
     </section>
@@ -91,6 +92,6 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I"></script>
     <script src="{% static 'home/assets/js/vendor/gmaps.min.js' %}"></script>
     <script src="{% static 'home/assets/js/vendor/ion.rangeSlider.js' %}"></script>
-    <script src="{% static 'home/assets/js/main.js"></script>
+    <script src="{% static 'home/assets/js/main.js' %}"></script>
 </body>
 </html>

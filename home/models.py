@@ -51,3 +51,19 @@ class Gallery(models.Model):
 
     def __str__(self) -> str:
         return f'{self.name} - {self.created} - {self.status}'
+    
+
+class Article(models.Model):
+    subject = models.CharField(max_length=50)
+    text = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
+    status = models.BooleanField(default=True)
+
+    class Meta:
+        verbose_name='article'
+        verbose_name_plural='aricles'
+        ordering=('created',)
+    
+    def __str__(self) -> str:
+        return f'{self.subject}-{self.created}'
+    

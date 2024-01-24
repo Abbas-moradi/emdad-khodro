@@ -10,4 +10,5 @@ urlpatterns = [
     path('gallery/', views.GalleryImage.as_view(), name='gallery'),
     path('newsletter/', views.UserEmailReg.as_view(), name='newsletter'),
     path('contactus/', views.ContactUs.as_view(), name='contactus'),
+    path('about/', views.About.as_view(), name='about'),
 ]

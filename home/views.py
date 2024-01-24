@@ -137,3 +137,10 @@ class ContactUs(View):
 
     def get(self, request):
         return render(request, self.cont_temp)
+    
+
+class About(View):
+    about_temp = 'about.html'
+
+    def get(self, request):
+        return render(request, self.about_temp)
