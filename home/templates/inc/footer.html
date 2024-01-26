@@ -10,7 +10,7 @@
                             <ul>
                                 <li class="mb-2"><a href="#">امدادرسانان</a></li>
                                 <li class="mb-2"><a href="#">تعمیرکاران</a></li>
-                                <li class="mb-2"><a href="#">ارتباط با ما</a></li>
+                                <li class="mb-2"><a href="{% url 'home:contactus' %}">ارتباط با ما</a></li>
                             </ul>
                         </div>
                     </div>
@@ -27,16 +27,11 @@
                     </div>
                     <div class="col-xl-3 offset-xl-1 col-lg-3">
                         <div class="single-widge-home">
-                            <h3 class="mb-4">گالری تصاویر</h3>
+                            <h3 class="mb-4"><a href="{% url 'home:gallery' %}">گالری تصاویر</a></h3>
                             <div class="feed">
-                                <img src='{% static "home/assets/images/feed1.jpg" %}' alt="feed">
-                                <img src='{% static "home/assets/images/feed2.jpg" %}' alt="feed">
-                                <img src='{% static "home/assets/images/feed3.jpg" %}' alt="feed">
-                                <img src='{% static "home/assets/images/feed4.jpg" %}' alt="feed">
-                                <img src='{% static "home/assets/images/feed5.jpg" %}' alt="feed">
-                                <img src='{% static "home/assets/images/feed6.jpg" %}' alt="feed">
-                                <img src='{% static "home/assets/images/feed7.jpg" %}' alt="feed">
-                                <img src='{% static "home/assets/images/feed8.jpg" %}' alt="feed">
+                                {% for image in images %}
+                                <img src='{{ image.image.url }}' alt="feed">
+                                {% endfor %}
                             </div>
                         </div>
                     </div>

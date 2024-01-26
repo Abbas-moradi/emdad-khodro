@@ -15,10 +15,12 @@ class Home(View):
         all_jobs = Job.objects.filter(status=True)
         advertis = Advertisement.objects.filter(status=True, expiration=False)
         random_advertis = random.choice(advertis)
+        images = Gallery.objects.filter(status=True)[:8]
 
         return render(request, self.template_name, {'users': all_user,
                                                     'jobs': all_jobs,
-                                                    'advertis': random_advertis})
+                                                    'advertis': random_advertis,
+                                                    'images': images})
     
 
 class Register(View):
