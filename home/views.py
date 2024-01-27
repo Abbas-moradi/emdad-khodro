@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views import View
 from accounts.models import User, OtpCodeRegister, Newsletters
-from home.models import Job, Advertisement, Gallery
+from home.models import Job, Advertisement, Gallery, Article
 import random
 from utils import send_email
 from django.utils import timezone
@@ -16,11 +16,13 @@ class Home(View):
         advertis = Advertisement.objects.filter(status=True, expiration=False)
         random_advertis = random.choice(advertis)
         images = Gallery.objects.filter(status=True)[:8]
+        articlse = Article.objects.filter(status=True)
 
         return render(request, self.template_name, {'users': all_user,
                                                     'jobs': all_jobs,
                                                     'advertis': random_advertis,
-                                                    'images': images})
+                                                    'images': images,
+                                                    'articles':articlse})
     
 
 class Register(View):

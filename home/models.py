@@ -56,6 +56,7 @@ class Gallery(models.Model):
 class Article(models.Model):
     subject = models.CharField(max_length=50)
     text = models.TextField()
+    image = models.ImageField(upload_to='article-pic/')
     created = models.DateTimeField(auto_now_add=True)
     status = models.BooleanField(default=True)
 

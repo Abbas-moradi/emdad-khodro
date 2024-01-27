@@ -33,5 +33,16 @@
     <script src="{% static 'home/assets/js/vendor/jquery.nice-select.min.js' %}"></script>
     <script src="{% static 'home/assets/js/vendor/ion.rangeSlider.js' %}"></script>
     <script src="{% static 'home/assets/js/main.js' %}"></script>
+    <script>
+        function toggleExpand(index) {
+            const article = document.getElementById('article_' + index);
+    
+            if (article.style.maxHeight === 'none') {
+                article.style.maxHeight = '7em';
+            } else {
+                article.style.maxHeight = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
