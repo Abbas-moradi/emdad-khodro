@@ -28,11 +28,12 @@ body{
 }
 .phone-number {
     text-align: center;
-    font-size: 60px; 
+    font-size: 40px;
+    margin: 10px;
 }
 .banner-text {
     text-align: center;
-    font-size: 64px;
+    font-size: 40px;
     margin-left: 0px; 
 }
 .orange{

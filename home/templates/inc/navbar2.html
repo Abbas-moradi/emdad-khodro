@@ -9,7 +9,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav mx-auto">
-                    <a href="#" class="nav-item nav-link">خانه</a>
+                    <a href="{% url 'home:home' %}" class="nav-item nav-link">خانه</a>
                     <a href="{% url 'home:about' %}" class="nav-item nav-link">درباره ما</a>
                     <a href="" class="nav-item nav-link">تعمیرکاران</a>
                     <div class="nav-item dropdown">
@@ -27,10 +27,9 @@
                     <a href="{% url 'home:gallery' %}" class="nav-item nav-link">گالری</a>
                     <a href="{% url 'home:contactus' %}" class="nav-item nav-link">ارتباط با ما</a>
                 </div>
-                
                 <a href="{% url 'home:register' %}" class="btn btn-warning rounded-pill px-3 d-none d-lg-block"> عضویت در سایت </a>
+                <!-- Add a phone icon and a phone link -->
+                <a href="tel:09022812122" class="nav-item nav-link"><i class="fas fa-phone"></i> 09022812122</a>
             </div>
         </nav>
-    
-       
         <!-- Navbar End -->
