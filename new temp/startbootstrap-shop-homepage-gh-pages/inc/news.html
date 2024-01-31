@@ -1,0 +1,46 @@
+{% load static %}
+   <!-- News Area Starts -->
+   <br><br><br>
+   <section id="blog" class="news-area section-padding3">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-top text-center">
+                    <h2>نکات مفید در رابطه با خرابی خودرو </h2>
+                    <p>نکات مهمی که تا رسیدن امداد خودرو باید بدانید</p>
+                    <h4 class="text-center">امداد خودرو آبیک</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% for article in articles %}
+            <div class="col-lg-4 col-md-6" >
+                <div class="single-news mb-5 mb-lg-0">
+                    <div class="img">
+                        <img src="{{ article.image.url }}" alt="job pic" width="350px">
+                    </div>                    
+                    <br>
+                    <div class="news-title">
+                        <h4 class="float-right">{{ article.subject }}</h4>
+                    </div>
+                    <div class="news-tag">
+                        <ul class="my-4">
+                            <li id="article_{{ forloop.counter }}" style="text-align: justify; max-height: 7em; overflow: hidden;">
+                                <h5><i class="fa fa-folder-open-o"></i>{{ article.text }}</h5>
+                            </li>
+                            <br>
+                            <br>
+                            <li class="float-right" dir="rtl">
+                                <h5 class="float-right"><i class="fa fa-folder-open-o"></i>{{ article.created }}</h5>
+                                <h5 class="float-right"><i class="fa fa-folder-open-o"></i> امداد خودرو آبیک </h5>
+                            </li>
+                        </ul>
+                        <button onclick="toggleExpand({{ forloop.counter }})">ادامه مطلب</button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- News Area End -->
