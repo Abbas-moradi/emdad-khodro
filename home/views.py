@@ -149,4 +149,6 @@ class About(View):
     about_temp = 'about.html'
 
     def get(self, request):
-        return render(request, self.about_temp)
+        advertis = Advertisement.objects.filter(status=True, expiration=False)
+        random_advertis = random.choice(advertis)
+        return render(request, self.about_temp, {'advertis': random_advertis})

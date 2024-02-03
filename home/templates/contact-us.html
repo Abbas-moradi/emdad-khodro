@@ -1,78 +1,380 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-    {% include 'inc/head.html' %}
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>امداد خودرو آبیک</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{% static 'home/assets/favicon.ico' %}" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'home/css/styles.css' %}" rel="stylesheet" />
+        <!-- CSS Files -->
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.3/components/abouts/about-4/assets/css/about-4.css" />
+    </head>
     <body>
-    <!-- Preloader Starts -->
-    <div class="preloader">
-        <div class="spinner"></div>
-    </div>
-    <!-- Preloader End -->
-    <br><br>
-    {% include 'inc/advertisement.html' %}
-
-    <!-- Contact Form Starts -->
-    <section class="contact-form section-padding3">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 mb-5 mb-lg-0">
-                    <div class="d-flex">
-                        <div class="into-icon">
-                            <i class="fa fa-home"></i>
-                        </div>
-                        <div class="info-text">
-                            <h4>قزوین,  آبیک</h4>
-                            <p> شهرستان آبیک  </p>
-                        </div>
-                    </div>
-                    <div class="d-flex">
-                        <div class="into-icon">
-                            <i class="fa fa-phone"></i>
-                        </div>
-                        <div class="info-text">
-                            <h4>09022812122</h4>
-                            <p>02832896689</p>
-                        </div>
-                    </div>
-                    <div class="d-flex">
-                        <div class="into-icon">
-                            <i class="fa fa-envelope-o"></i>
-                        </div>
-                        <div class="info-text">
-                            <h4>support@yoursite.com</h4>
-                            <p>درخواست خود را در هر زمان برای ما ارسال کنید</p>
-                        </div>
-                    </div>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <form class="d-flex">
+                    <a href="tel:09022812122" class="nav-item nav-link text-center"><i class="bi bi-headset"></i> 09022812122</a>
+                </form>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'home:home' %}">خانه</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'home:about' %}">درباره ما</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">صفحه ها</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{% url 'home:register' %}"> ثبت نام </a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="{% url 'home:about' %}">درباره ما </a></li>
+                                <li><a class="dropdown-item" href="{% url 'home:gallery' %}"> گالری تصاویر  </a></li>
+                                <li><a class="dropdown-item" href="{% url 'home:contactus' %}">ارتباط با ما</a></li>
+                                <li><a class="dropdown-item" href="#!"> مجوزات </a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-lg-9">
-                    <form action="#">
-                        <div class="left">
-                            <input name="name`" type="text" placeholder="اسم خود را وارد کنید" onfocus="this.placeholder = ''" onblur="this.placeholder = 'اسم خود را وارد کنید'" required>
-                            <input name="email" type="email" placeholder="ایمیل خود را وارد کنید" onfocus="this.placeholder = ''" onblur="this.placeholder = 'ایمیل خود را وارد کنید'" required>
-                            <input name="subject" type="text" placeholder="طرح موضوع" onfocus="this.placeholder = ''" onblur="this.placeholder = 'طرح موضوع'" required>
-                        </div>
-                        <div class="right">
-                            <textarea name="پیام" cols="20" rows="7"  placeholder="پیام خود را وارد کنید " onfocus="this.placeholder = ''" onblur="this.placeholder = 'پیام خود را وارد کنید '" required></textarea>
-                        </div>
-                        <button type="submit" class="template-btn">ارتباط با ما </button>
-                    </form>
+                <form class="d-flex">
+                    <button class="btn btn-outline-dark" type="submit">
+                        <i class="bi bi-person-fill me-1"></i>
+                        <a href="{% url 'home:register' %}">ثبت نام </a>
+                    </button>
+                </form>
+            </div>                        
+        </nav>
+        <!-- Header-->
+        <header class="bg-warning py-1"  >
+            <div class="container px-1 px-lg-2 my-2">
+                <div class="text-center text-white">
+                    <h3 class="display-6 fw-bolder">امداد خودرو آبیک | زیاران | طالقان | اتوبان غدیر</h3>
+                    <p class="lead fw-normal text-white-70 mb-0"> در سریعترین زمان ممکن در کنار شما هستیم </p>
                 </div>
-                <a href="{% url 'home:home' %}" class="btn btn-dark rounded-pill px-3 d-none d-lg-block">  برگشت به صفحه اصلی  </a>
             </div>
-        </div>
-    </section>
-    <!-- Contact Form End -->
+        </header>
+        <nav aria-label="breadcrumb" >
+            <ol class="breadcrumb" ><a class="bi bi-geo-fill"></a>
+                <li class="breadcrumb-item"><a href="{% url 'home:home' %}">خانه</a></li>
+                <li class="breadcrumb-item active" aria-current="page">ارتباط با ما</li>
+            </ol>
+        </nav>
 
+               <!--Section: Contact v.2-->
+               <div class="container my-5">
+                <section class="mb-4">
+        
+                    <!--Section heading-->
+                    <h2 class="h1-responsive font-weight-bold text-center my-4">ارتباط با ما</h2>
+                    <!--Section description-->
+                    <p class="text-center w-responsive mx-auto mb-5">آیا سؤالی دارید؟ ما به شما پیشنهاد می‌دهیم با ما در تماس مستقیم باشید. تیم ما در دسترس شماست و طی چند ساعت آینده به شما کمک خواهد کرد</p>
+        
+                    <div class="row">
+        
+                        <!--Grid column-->
+                        <div class="col-md-9 mb-md-0 mb-5">
+                            <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+        
+                                <!--Grid row-->
+                                <div class="row">
+        
+                                    <!--Grid column-->
+                                    <div class="col-md-6">
+                                        <div class="md-form mb-0">
+                                            <input type="text" id="name" name="name" class="form-control">
+                                            <label for="name" class=""> اسم شما</label>
+                                        </div>
+                                    </div>
+                                    <!--Grid column-->
+        
+                                    <!--Grid column-->
+                                    <div class="col-md-6">
+                                        <div class="md-form mb-0">
+                                            <input type="text" id="email" name="email" class="form-control">
+                                            <label for="email" class="">ایمیل شما </label>
+                                        </div>
+                                    </div>
+                                    <!--Grid column-->
+        
+                                </div>
+                                <!--Grid row-->
+        
+                                <!--Grid row-->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="md-form mb-0">
+                                            <input type="text" id="subject" name="subject" class="form-control">
+                                            <label for="subject" class="">موضوع</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Grid row-->
+        
+                                <!--Grid row-->
+                                <div class="row">
+        
+                                    <!--Grid column-->
+                                    <div class="col-md-12">
+        
+                                        <div class="md-form">
+                                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                                            <label for="message">پیام شما </label>
+                                        </div>
+        
+                                    </div>
+                                </div>
+                                <!--Grid row-->
+        
+                            </form>
+        
+                            <div class="text-center text-md-left">
+                                <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">ارسال موضوع</a>
+                            </div>
+                            <div class="status"></div>
+                        </div>
+                        <!--Grid column-->
+        
+                        <!--Grid column-->
+                        <div class="col-md-3 text-center">
+                            <ul class="list-unstyled mb-0">
+                                <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                                    <p>آبیک - امداد خودرو آبیک</p>
+                                </li>
+        
+                                <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                                    <p>09022812122</p>
+                                    <p>02832896689</p>
+                                </li>
+        
+                                <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                                    <p>yourmail@gmail.com</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--Grid column-->
+        
+                    </div>
+        
+                </section>
+                </div>
+                <!--Section: Contact v.2-->
 
-   
-    <!-- Javascript -->
-    <script src="{% static 'home/assets/js/vendor/jquery-2.2.4.min.js' %}"></script>
-	<script src="{% static 'home/assets/js/vendor/bootstrap-4.1.3.min.js' %}"></script>
-    <script src="{% static 'home/assets/js/vendor/wow.min.js' %}"></script>
-    <script src="{% static 'home/assets/js/vendor/owl-carousel.min.js' %}"></script>
-    <script src="{% static 'home/assets/js/vendor/jquery.nice-select.min.js' %}"></script>
-    <script src="{% static 'home/assets/js/vendor/gmaps.min.js' %}"></script>
-    <script src="{% static 'home/assets/js/vendor/ion.rangeSlider.js' %}"></script>
-    <script src="{% static 'home/assets/js/main.js' %}"></script>
-</body>
+        <br><br>
+        <footer class="py-3 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">محل تبلیغ کسب و کار شما  &copy; با ما در تماس باشد</p></div>
+        </footer>
+        {% include 'inc/advertisement.html' %}
+
+        <!-- Footer -->
+        <footer class="bg-secondary text-center text-white">
+            <!-- Grid container -->
+            <div class="container p-4">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                <i class="bi bi-facebook"></i></a>
+        
+                <!-- Twitter -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                <i class="bi bi-twitter"></i></a>
+        
+                <!-- Google -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                ><i class="bi bi-google"></i
+                ></a>
+        
+                <!-- Instagram -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                ><i class="bi bi-instagram"></i
+                ></a>
+        
+                <!-- Linkedin -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                ><i class="bi bi-linkedin"></i
+                ></a>
+        
+                <!-- Github -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                ><i class="bi bi-github"></i
+                ></a>
+            </section>
+            <!-- Section: Social media -->
+        
+            <!-- Section: Form -->
+            <section class="">
+                <form action="{% url 'home:newsletter' %}" method="post">
+                {% csrf_token %}
+                <!--Grid row-->
+                <div class="row d-flex justify-content-center">
+                    <!--Grid column-->
+                    <div class="col-auto">
+                    <p class="pt-2">
+                        <strong>به خبر نامه ما بپیوندید</strong>
+                    </p>
+                    </div>
+                    <!--Grid column-->
+        
+                    <!--Grid column-->
+                    <div class="col-md-5 col-12">
+                    <!-- Email input -->
+                    <div class="form-outline form-white mb-4">
+                        <input name="email" type="email" id="form5Example2" class="form-control" />
+                        <label class="form-label" for="form5Example2">آدرس ایمیل </label>
+                    </div>
+                    </div>
+                    <!--Grid column-->
+        
+                    <!--Grid column-->
+                    <div class="col-auto">
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-outline-light mb-4">
+                        عضویت در خبر نامه
+                    </button>
+                    </div>
+                    <!--Grid column-->
+                </div>
+                <!--Grid row-->
+                </form>
+            </section>
+            <!-- Section: Form -->
+        
+            <!-- Section: Text -->
+            <section class="mb-4">
+                <p>
+                    امداد خودرو آبیک با بیش از ده سال تجربه در عرصه امداد و تعمیر خودرو، به عنوان یکی از پیشگامان در این صنعت شناخته می‌شود
+                </p>
+                <p class="phone-number" href="#" > تلفن تماس <br>  09022812122 <br> 02832896689</p>
+            </section>
+            <!-- Section: Text -->
+        
+            <!-- Section: Links -->
+            <section class="">
+                <!--Grid row-->
+                <div class="row">
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Links</h5>
+        
+                    <ul class="list-unstyled mb-0">
+                    <li>
+                        <a href="#!" class="text-white">Link 1</a>
+                    </li>
+                    <li>
+                        <a href="#!" class="text-white">Link 2</a>
+                    </li>
+                    <li>
+                        <a href="#!" class="text-white">Link 3</a>
+                    </li>
+                    <li>
+                        <a href="#!" class="text-white">Link 4</a>
+                    </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+        
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Links</h5>
+        
+                    <ul class="list-unstyled mb-0">
+                    <li>
+                        <a href="#!" class="text-white">Link 1</a>
+                    </li>
+                    <li>
+                        <a href="#!" class="text-white">Link 2</a>
+                    </li>
+                    <li>
+                        <a href="#!" class="text-white">Link 3</a>
+                    </li>
+                    <li>
+                        <a href="#!" class="text-white">Link 4</a>
+                    </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+        
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Links</h5>
+        
+                    <ul class="list-unstyled mb-0">
+                    <li>
+                        <a href="#!" class="text-white">Link 1</a>
+                    </li>
+                    <li>
+                        <a href="#!" class="text-white">Link 2</a>
+                    </li>
+                    <li>
+                        <a href="#!" class="text-white">Link 3</a>
+                    </li>
+                    <li>
+                        <a href="#!" class="text-white">Link 4</a>
+                    </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+        
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Links</h5>
+        
+                    <ul class="list-unstyled mb-0">
+                    <li>
+                        <a href="#!" class="text-white">Link 1</a>
+                    </li>
+                    <li>
+                        <a href="#!" class="text-white">Link 2</a>
+                    </li>
+                    <li>
+                        <a href="#!" class="text-white">Link 3</a>
+                    </li>
+                    <li>
+                        <a href="#!" class="text-white">Link 4</a>
+                    </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+                </div>
+                <!--Grid row-->
+            </section>
+            <!-- Section: Links -->
+            </div>
+            <!-- Grid container -->
+        
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+             طراحی شده توسط :
+            <a class="text-white" href="https://github.com/Abbas-moradi" target="_blank">عباس مرادی</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+
+     
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static 'home/js/scripts.js' %}"></script>
+        <script>
+            function toggleExpand(index) {
+                const article = document.getElementById('article_' + index);
+        
+                if (article.style.maxHeight === 'none') {
+                    article.style.maxHeight = '7em';
+                } else {
+                    article.style.maxHeight = 'none';
+                }
+            }
+        </script>
+    </body>
 </html>
+
+
+

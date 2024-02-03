@@ -8,34 +8,32 @@
                 <div class="section-top text-center">
                     <h2>نکات مفید در رابطه با خرابی خودرو </h2>
                     <p>نکات مهمی که تا رسیدن امداد خودرو باید بدانید</p>
-                    <h4 class="text-center">امداد خودرو آبیک</h4>
+                    <h4 class="text-center">امداد خودرو آبیک</h4><br><br>
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center">
             {% for article in articles %}
-            <div class="col-lg-4 col-md-6" >
-                <div class="single-news mb-5 mb-lg-0">
-                    <div class="img">
-                        <img src="{{ article.image.url }}" alt="job pic" width="350px">
-                    </div>                    
-                    <br>
-                    <div class="news-title">
-                        <h4 class="float-right">{{ article.subject }}</h4>
-                    </div>
-                    <div class="news-tag">
-                        <ul class="my-4">
+            <div class="col mb-7" style="margin-bottom: 3%;">
+                <div class="card h-100">
+                    <!-- Product image-->
+                    <img class="card-img-top" src="{{ article.image.url }}" alt="..." width="350px"/>
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder"> {{ article.subject }} </h5>
                             <li id="article_{{ forloop.counter }}" style="text-align: justify; max-height: 7em; overflow: hidden;">
-                                <h5><i class="fa fa-folder-open-o"></i>{{ article.text }}</h5>
+                                <p><i class="fa fa-folder-open-o"></i>{{ article.text }}</p>
                             </li>
                             <br>
+                            <p>{{ article.created }}</p>
                             <br>
-                            <li class="float-right" dir="rtl">
-                                <h5 class="float-right"><i class="fa fa-folder-open-o"></i>{{ article.created }}</h5>
-                                <h5 class="float-right"><i class="fa fa-folder-open-o"></i> امداد خودرو آبیک </h5>
-                            </li>
-                        </ul>
-                        <button onclick="toggleExpand({{ forloop.counter }})">ادامه مطلب</button>
+                            <a>تماس با امداد خودرو آبیک</a>
+                            <a href="tel:09022812122" class="nav-item nav-link text-center"><i class="bi bi-headset"></i> 09022812122</a>
+                            <br>
+                            <button class="btn btn-outline-dark" onclick="toggleExpand({{ forloop.counter }})">ادامه مطلب</button>
+                        </div>
                     </div>
                 </div>
             </div>

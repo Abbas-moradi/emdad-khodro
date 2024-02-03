@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    {% include 'inc/head.html' %}
+    <body>
+    <!-- Preloader Starts -->
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+    <!-- Preloader End -->
+    <br><br>
+    {% include 'inc/advertisement.html' %}
+
+    <!-- Contact Form Starts -->
+    <section class="contact-form section-padding3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 mb-5 mb-lg-0">
+                    <div class="d-flex">
+                        <div class="into-icon">
+                            <i class="fa fa-home"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>قزوین,  آبیک</h4>
+                            <p> شهرستان آبیک  </p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="into-icon">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>09022812122</h4>
+                            <p>02832896689</p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="into-icon">
+                            <i class="fa fa-envelope-o"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>support@yoursite.com</h4>
+                            <p>درخواست خود را در هر زمان برای ما ارسال کنید</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <form action="#">
+                        <div class="left">
+                            <input name="name`" type="text" placeholder="اسم خود را وارد کنید" onfocus="this.placeholder = ''" onblur="this.placeholder = 'اسم خود را وارد کنید'" required>
+                            <input name="email" type="email" placeholder="ایمیل خود را وارد کنید" onfocus="this.placeholder = ''" onblur="this.placeholder = 'ایمیل خود را وارد کنید'" required>
+                            <input name="subject" type="text" placeholder="طرح موضوع" onfocus="this.placeholder = ''" onblur="this.placeholder = 'طرح موضوع'" required>
+                        </div>
+                        <div class="right">
+                            <textarea name="پیام" cols="20" rows="7"  placeholder="پیام خود را وارد کنید " onfocus="this.placeholder = ''" onblur="this.placeholder = 'پیام خود را وارد کنید '" required></textarea>
+                        </div>
+                        <button type="submit" class="template-btn">ارتباط با ما </button>
+                    </form>
+                </div>
+                <a href="{% url 'home:home' %}" class="btn btn-dark rounded-pill px-3 d-none d-lg-block">  برگشت به صفحه اصلی  </a>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Form End -->
+
+
+   
+    <!-- Javascript -->
+    <script src="{% static 'home/assets/js/vendor/jquery-2.2.4.min.js' %}"></script>
+	<script src="{% static 'home/assets/js/vendor/bootstrap-4.1.3.min.js' %}"></script>
+    <script src="{% static 'home/assets/js/vendor/wow.min.js' %}"></script>
+    <script src="{% static 'home/assets/js/vendor/owl-carousel.min.js' %}"></script>
+    <script src="{% static 'home/assets/js/vendor/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'home/assets/js/vendor/gmaps.min.js' %}"></script>
+    <script src="{% static 'home/assets/js/vendor/ion.rangeSlider.js' %}"></script>
+    <script src="{% static 'home/assets/js/main.js' %}"></script>
+</body>
+</html>

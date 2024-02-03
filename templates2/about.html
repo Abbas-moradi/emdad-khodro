@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% include 'inc/head.html' %}
+<body>
+    <!-- Preloader Starts -->
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+    <!-- Preloader End -->
+
+    <!-- Feature Area Starts -->
+    <section class="feature-area section-padding2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-top text-center">
+                        <h2>چرا باید امداد خودرو آبیک را انتخاب کنید</h2>
+                        <h1 class="phone-number" href="#" > تلفن تماس <br>  09022812122 <br> 02832896689</h1>
+                        <p>امداد خودرو آبیک با بیش از ده سال تجربه در عرصه امداد و تعمیر خودرو، به عنوان یکی از پیشگامان در این صنعت شناخته می‌شود. ما با تکیه بر تیم متخصص و مجربی که از آخرین تکنولوژی‌ها و تجهیزات مدرن استفاده می‌کنند، به ارائه خدمات با کیفیت بالا و امداد سریع برای مشتریان عزیز می‌پردازیم.
+
+                            خدمات متنوعی که امداد خودرو آبیک ارائه می‌دهد، شامل اموری همچون یدک کشی در هر نقطه از منطقه، تعمیرات سیار در محل، عیب یابی فنی و مکانیکی، تعمیرات پیشگیرانه و دوره‌ای، تعویض لوازم و قطعات خودرو، و خدمات مرتبط با تعمیر و نگهداری خودروهای شما می‌باشد.
+                            
+                            تیم امداد خودرو آبیک با تلاش بی‌وقفه و پاسخگویی سریع به نیازهای مشتریان، همواره در تمامی زمان‌ها آماده ارائه خدمات با کیفیت و ایجاد رضایت کامل مشتریان است. اعتماد شما به ما، حافظه اصلی موفقیت و پیشرفت ماست و ما به این افتخار دست نخورده خود را حفظ می‌کنیم.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Feature Area End -->
+
+    {% include 'inc/advertisement.html' %}
+
+    <!-- Team Area Starts -->
+    <section class="team-area section-padding2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-top text-center">
+                        <h2>امداد های انجام شده توسط امداد خودرو آبیک</h2>
+                        <p>امداد خودرو آبیک 24 ساعت شبانه روز در خدمت شماست</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-team mb-5 mb-lg-0">
+                        <div class="team-img team-img1">
+                            <div class="hover-state">
+                                
+                            </div>
+                        </div>
+                        <div class="team-footer text-center mt-4">
+                            <h3>ethel davis</h3>
+                            <h5>managing director (sales)</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-team mb-5 mb-lg-0">
+                        <div class="team-img team-img2">
+                            <div class="hover-state">
+                               
+                            </div>
+                        </div>
+                        <div class="team-footer text-center mt-4">
+                            <h3>rodney cooper</h3>
+                            <h5>creative art director (project)</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-team mb-5 mb-sm-0">
+                        <div class="team-img team-img3">
+                            <div class="hover-state">
+                               
+                            </div>
+                        </div>
+                        <div class="team-footer text-center mt-4">
+                            <h3>dora walker</h3>
+                            <h5>senior core developer</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-team">
+                        <div class="team-img team-img4">
+                            <div class="hover-state">
+                                
+                            </div>
+                        </div>
+                        <div class="team-footer text-center mt-4">
+                            <h3>lena keller</h3>
+                            <h5>creative content developer</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Team Area End -->
+
+    <!-- Employee Area Starts -->
+    <section class="employee-area section-padding">
+        <div class="container">
+            <div class="row">
+                
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <br><br>
+                    <a href="{% url 'home:home' %}" class="btn btn-dark rounded-pill px-3 d-none d-lg-block">  برگشت به صفحه اصلی  </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Employee Area End -->
+
+    <!-- Javascript -->
+    <script src="{% static 'home/assets/js/vendor/jquery-2.2.4.min.js' %}"></script>
+	<script src="{% static 'home/assets/js/vendor/bootstrap-4.1.3.min.js' %}"></script>
+    <script src="{% static 'home/assets/js/vendor/wow.min.js' %}"></script>
+    <script src="{% static 'home/assets/js/vendor/owl-carousel.min.js' %}"></script>
+    <script src="{% static 'home/assets/js/vendor/jquery.nice-select.min.js' %}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I"></script>
+    <script src="{% static 'home/assets/js/vendor/gmaps.min.js' %}"></script>
+    <script src="{% static 'home/assets/js/vendor/ion.rangeSlider.js' %}"></script>
+    <script src="{% static 'home/assets/js/main.js' %}"></script>
+</body>
+</html>
